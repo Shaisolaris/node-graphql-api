@@ -11,8 +11,18 @@
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit"
   },
-  "keywords": ["graphql", "apollo-server", "typescript", "dataloader", "jwt", "websocket", "subscriptions", "multi-tenant", "saas"],
-  "author": "Shehryar Ali",
+  "keywords": [
+    "graphql",
+    "apollo-server",
+    "typescript",
+    "dataloader",
+    "jwt",
+    "websocket",
+    "subscriptions",
+    "multi-tenant",
+    "saas"
+  ],
+  "author": "Solaris Technologies",
   "license": "MIT",
   "dependencies": {
     "@apollo/server": "^4.13.0",

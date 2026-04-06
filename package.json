@@ -22,7 +22,7 @@
     "multi-tenant",
     "saas"
   ],
-  "author": "Solaris Technologies",
+  "author": "Shai A",
   "license": "MIT",
   "dependencies": {
     "@apollo/server": "^4.13.0",

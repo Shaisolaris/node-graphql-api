@@ -1,3 +1,4 @@
+import { DEMO_MODE } from "./demo-data";
 import type { ExpressContextFunctionArgument } from '@apollo/server/express4';
 import { extractTokenFromHeader, verifyAccessToken } from '../auth/jwt.js';
 import { createLoaders } from '../loaders/index.js';

@@ -1,10 +1,12 @@
 #!/bin/bash
 set -e
-echo "🚀 Setting up node-graphql-api..."
-command -v node >/dev/null 2>&1 || { echo "❌ Node.js 18+ required"; exit 1; }
-echo "📦 Installing dependencies..."
+echo "🚀 Setting up node-graphql-api"
 npm install
-if [ ! -f .env ]; then
-  cp .env.example .env 2>/dev/null || echo "⚠️  Create .env from .env.example"
-fi
-echo ""; echo "✅ Setup complete! Run: npm run dev"
+echo ""
+echo "✅ Ready! No database needed — uses in-memory store with auto-seeded data."
+echo ""
+echo "Start:    npm run dev"
+echo "Explore:  http://localhost:4000/graphql (GraphQL Playground)"
+echo ""
+echo "Demo credentials: alice@acme.com / password123"
+echo "See examples/queries.graphql for ready-to-use queries"

@@ -1,5 +1,7 @@
 # node-graphql-api
 
+![CI](https://github.com/Shaisolaris/node-graphql-api/actions/workflows/ci.yml/badge.svg)
+
 Production-ready GraphQL API built with Apollo Server 4, TypeScript, and a multi-tenant SaaS data model. Features DataLoader for N+1 query prevention, JWT authentication with refresh token rotation, real-time WebSocket subscriptions, and Relay-style cursor pagination.
 
 ## Stack

@@ -1,0 +1,57 @@
+# ─── Example Queries ─────────────────────────────
+
+# Get all projects with tasks
+query GetProjects {
+  projects {
+    id
+    name
+    status
+    tasks {
+      id
+      title
+      status
+      assignee { name }
+    }
+  }
+}
+
+# Get user by ID
+query GetUser($id: ID!) {
+  user(id: $id) {
+    id
+    name
+    email
+    role
+    projects { name }
+  }
+}
+
+# ─── Mutations ───────────────────────────────────
+
+mutation CreateProject($input: CreateProjectInput!) {
+  createProject(input: $input) {
+    id
+    name
+    status
+  }
+}
+
+mutation CreateTask($input: CreateTaskInput!) {
+  createTask(input: $input) {
+    id
+    title
+    priority
+    project { name }
+  }
+}
+
+# ─── Subscriptions ───────────────────────────────
+
+subscription OnTaskUpdated($projectId: ID!) {
+  taskUpdated(projectId: $projectId) {
+    id
+    title
+    status
+    assignee { name }
+  }
+}

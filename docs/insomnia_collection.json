@@ -1,0 +1,43 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "resources": [
+    {
+      "_type": "workspace",
+      "name": "node-graphql-api",
+      "description": "GraphQL API with Apollo Server — queries, mutations, subscriptions"
+    },
+    {
+      "_type": "request",
+      "name": "Get All Projects",
+      "method": "POST",
+      "url": "http://localhost:4000/graphql",
+      "body": {"mimeType": "application/json", "text": "{\"query\": \"{ projects { id name status tasks { id title status assignee { name } } } }\"}"},
+      "headers": [{"name": "Content-Type", "value": "application/json"}]
+    },
+    {
+      "_type": "request",
+      "name": "Get User by ID",
+      "method": "POST",
+      "url": "http://localhost:4000/graphql",
+      "body": {"mimeType": "application/json", "text": "{\"query\": \"query GetUser($id: ID!) { user(id: $id) { id name email role projects { name } } }\", \"variables\": {\"id\": \"u1\"}}"},
+      "headers": [{"name": "Content-Type", "value": "application/json"}, {"name": "Authorization", "value": "Bearer YOUR_TOKEN"}]
+    },
+    {
+      "_type": "request",
+      "name": "Create Project",
+      "method": "POST",
+      "url": "http://localhost:4000/graphql",
+      "body": {"mimeType": "application/json", "text": "{\"query\": \"mutation CreateProject($input: CreateProjectInput!) { createProject(input: $input) { id name status } }\", \"variables\": {\"input\": {\"name\": \"New Project\", \"teamId\": \"team1\"}}}"},
+      "headers": [{"name": "Content-Type", "value": "application/json"}, {"name": "Authorization", "value": "Bearer YOUR_TOKEN"}]
+    },
+    {
+      "_type": "request",
+      "name": "Login",
+      "method": "POST",
+      "url": "http://localhost:4000/graphql",
+      "body": {"mimeType": "application/json", "text": "{\"query\": \"mutation Login($email: String!, $password: String!, $tenantSlug: String!) { login(email: $email, password: $password, tenantSlug: $tenantSlug) { accessToken refreshToken user { id name email role } } }\", \"variables\": {\"email\": \"alice@acme.com\", \"password\": \"password123\", \"tenantSlug\": \"acme\"}}"},
+      "headers": [{"name": "Content-Type", "value": "application/json"}]
+    }
+  ]
+}

@@ -36,6 +36,7 @@
     "graphql-subscriptions": "^3.0.0",
     "graphql-ws": "^6.0.8",
     "jsonwebtoken": "^9.0.3",
+    "node-fetch": "^3.3.2",
     "uuid": "^13.0.0",
     "winston": "^3.19.0",
     "ws": "^8.20.0"
